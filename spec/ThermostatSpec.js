@@ -22,4 +22,8 @@ describe("Thermostat", function() {
   it("has a minimum temperature", function() {
     expect(thermo.minTemp).toEqual(10)
   })
+
+  it("has a power saving mode", function() {
+    expect(thermo.isPowerSavingOn).toEqual(true)
+  })
 });

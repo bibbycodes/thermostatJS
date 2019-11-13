@@ -1,11 +1,8 @@
 function Thermostat() {
   this.temperature = 20
   this.minTemp = 10
+  this.isPowerSavingOn = true
 }
-
-// Thermostat.prototype.temperature = function() {
-//   return this.temperature 
-// }
 
 Thermostat.prototype.up = function (amount) {
   this.temperature += amount
