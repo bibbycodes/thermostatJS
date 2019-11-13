@@ -41,12 +41,17 @@ describe("Thermostat", function() {
     expect(thermo.temperature).toEqual(20);
   });
 
-  it('can ask thermostat current energy usage',function(){
+  it('returns Medium energy usage when temperature <25 >18 degrees aka at default start',function(){
     expect(thermo.energyUsage()).toEqual("Medium usage");
   });
 
   it('returns low energy usage when temperature <18 degrees',function(){
     thermo.down(3)
     expect(thermo.energyUsage()).toEqual("Low usage");
+  });
+
+  it("returns 'high' usage when temperature > 25 degrees",function(){
+    thermo.up(6);
+    expect(thermo.energyUsage()).toEqual("High usage");
   });
 });
