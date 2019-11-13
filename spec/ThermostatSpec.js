@@ -44,4 +44,9 @@ describe("Thermostat", function() {
   it('can ask thermostat current energy usage',function(){
     expect(thermo.energyUsage()).toEqual("Medium usage");
   });
+
+  it('returns low energy usage when temperature <18 degrees',function(){
+    thermo.down(3)
+    expect(thermo.energyUsage()).toEqual("Low usage");
+  });
 });
