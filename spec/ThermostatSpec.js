@@ -35,4 +35,9 @@ describe("Thermostat", function() {
     thermo.togglePowerSaving()
     expect(thermo.maxTemp).toEqual(32)
   })
+
+  it('can reset the temperature to 20',function(){
+    thermo.reset()
+    expect(thermo.temperature).toEqual(20);
+  });
 });
