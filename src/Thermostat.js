@@ -26,3 +26,7 @@ Thermostat.prototype.togglePowerSaving = function () {
 Thermostat.prototype.reset = function () {
   this.temperature = 20;
 };
+
+Thermostat.prototype.energyUsage = function () {
+  return "Medium usage"
+};

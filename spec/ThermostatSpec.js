@@ -40,4 +40,8 @@ describe("Thermostat", function() {
     thermo.reset()
     expect(thermo.temperature).toEqual(20);
   });
+
+  it('can ask thermostat current energy usage',function(){
+    expect(thermo.energyUsage()).toEqual("Medium usage");
+  });
 });
