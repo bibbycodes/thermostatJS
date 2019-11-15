@@ -1,6 +1,6 @@
 
   function updateTemperature() {
-    $('#temp-guage-text').text(t.temperature);
+    $('p#temp-guage-text').text(`${t.temperature}`);
     $('.usage-indicator').attr('id', t.energyUsage());
   }
 
@@ -9,25 +9,29 @@ $(document).ready(function() {
   updateTemperature()
   $('#power-saving').text(`Power Saving: ${t.returnValForPowerSaving()}`)
 
-  $('#up').on('click', () => {
+  $('#plus').on('click', () => {
     t.up(1)
     // $('p#temp-guage-text').text(t.temperature)
     updateTemperature()
   })
 
-  $('#down').on('click', () => {
+  $('#minus').on('click', () => {
     t.down(1)
     updateTemperature()
   })
 
-  $('#reset').on('click', () => {
+  $('.reset-btn').on('click', () => {
     t.reset()
     updateTemperature()
   })
 
-  $('#power-saving').on('click', () => {
+  $('#ps-mode').on('click', () => {
     t.togglePowerSaving()
-    $('#power-saving').text(`Power Saving: ${t.returnValForPowerSaving()}`)
+    if (t.isPowerSavingOn) {
+      $('.ps-mode').attr('src', "src/svg/008-energy-1.svg")
+    } else {
+      $('.ps-mode').attr('src', "src/svg/009-saving.svg")
+    }
     updateTemperature()
   })
 })
