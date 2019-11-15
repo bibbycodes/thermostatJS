@@ -13,7 +13,7 @@
 
 
 <body>
-  <h1>Thermostat</h1>
+  <h1>THERMOSTAT</h1>
   
   <div class="container-fluid h-100 w-100">
 
@@ -22,11 +22,20 @@
       <div class = "buttons-box">
         <div class="buttons" id="plus"><img class="plus" src="src/svg/001-add.svg" alt="plus"></div>
         <div class="buttons" id="minus"><img class="minus" src="src/svg/005-minus-sign-of-a-line-in-horizontal-position.svg" alt="minus"></div>
-        <div class="buttons" id="ps-mode"><img class ="ps-mode" src="src/svg/008-energy-1.svg" alt=""></div>
+        <div class="buttons" id="ps-mode"><img class ="ps-mode" src="src/svg/009-saving.svg" alt=""></div>
         <div class="buttons" id="reset-btn"><p class="reset-btn">RESET</p></div>
       </div>
       <div class="usage-indicator box">
       </div>
+    </div>
+
+    <div class="weather-api">
+      <form>
+        <input type="text" placeholder="Select City" name="city-form" id="select-city">
+        <input type="submit" id="submit">
+      </form>
+      <p>Weather in <span id="city">London</span>:<span class="weather"></span></p>
+      <p>Temperature in <span id="city">London</span>:<span class="weather-temp"></span></p>
     </div>
 
   </div>
